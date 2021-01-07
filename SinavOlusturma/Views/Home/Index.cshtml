@@ -3,17 +3,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <button id="get" class="btn btn-primary" title="get">Tıkla </button>
-</div>
-    <div id="accordion">
-@for (int i=0; i<Model.headers.Count;i++)
-{
+<div id="accordion">
+    @for (int i = 0; i < Model.headers.Count; i++)
+    {
         <div class="card">
             <div class="card-header" id="heading-@i">
                 <h5 class="mb-0">
                     <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse-@i" aria-expanded="false" aria-controls="collapse-@i">
-                        @Model.headers[i]
+                        <span>@Model.headers[i]</span>
                     </button>
                 </h5>
             </div>
@@ -21,10 +18,69 @@
             <div id="collapse-@i" class="collapse hide" aria-labelledby="heading-@i" data-parent="#accordion">
                 <div class="card-body">
                     @Html.Raw(Model.contents[i])
+
+                    <hr />
+
+                    <div id="questions">
+                        @for (int q = 1; q < 5; q++)
+                        {
+                            <div class="d-flex">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Soru @q</span>
+                                </div>
+                                <input type="text" id="Question-@q" class="form-control flex-fill" required>
+                            </div>
+                            <div class="d-flex">
+                                <div class="input-group">
+                                    <div class="input-group-prepend" style="width:50px;">
+                                        <span class="input-group-text flex-fill">A) </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="choiceA-@q" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend" style="width:50px;">
+                                        <span class="input-group-text flex-fill">B) </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="choiceB-@q" required>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="input-group">
+                                    <div class="input-group-prepend" style="width:50px;">
+                                        <span class="input-group-text flex-fill">C) </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="choiceC-@q" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend" style="width:50px;">
+                                        <span class="input-group-text flex-fill">D) </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="choiceD-@q" required>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <select class="custom-select  col-4">
+                                    <option selected>Doğru Cevap Seç :</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                </select>
+                            </div>
+
+                            <br />
+                            <br />
+                        }
+
+                    </div>
+
                 </div>
             </div>
         </div>
-}
-    </div>
+    }
+</div>
 
 
