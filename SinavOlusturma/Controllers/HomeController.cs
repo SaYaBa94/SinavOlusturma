@@ -23,7 +23,7 @@ namespace SinavOlusturma.Controllers
             for (int i = 0; i < links.Count; i++)
             {
                 HtmlNode[] header = ab.getNodesByXPath(links[i], "/html/body/div[1]/div/main/article/div[1]/header/div/div[1]");
-                HtmlNode[] content = ab.getNodesByXPath(links[i], "/html/body/div[1]/div/main/article/div[2]/div/div[1]/div/div[1]//p");
+                HtmlNode[] content = ab.getNodesByXPath(links[i], "/html/body/div[1]/div/main/article/div[2]//p");
 
                 headers.Add(header[0].LastChild.InnerHtml);
                 string a = "";
