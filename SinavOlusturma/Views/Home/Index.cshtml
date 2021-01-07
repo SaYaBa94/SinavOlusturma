@@ -1,8 +1,30 @@
-﻿@{
+﻿@model HomeViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button id="get" class="btn btn-primary" title="get">Tıkla </button>
 </div>
+    <div id="accordion">
+@for (int i=0; i<Model.headers.Count;i++)
+{
+        <div class="card">
+            <div class="card-header" id="heading-@i">
+                <h5 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse-@i" aria-expanded="false" aria-controls="collapse-@i">
+                        @Model.headers[i]
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapse-@i" class="collapse hide" aria-labelledby="heading-@i" data-parent="#accordion">
+                <div class="card-body">
+                    @Html.Raw(Model.contents[i])
+                </div>
+            </div>
+        </div>
+}
+    </div>
+
+
