@@ -8,7 +8,7 @@ namespace BusinessLogicLayer
 {
     public class ArticleBusiness
     {
-        public List<string> getLinks(string url, string xpath, string toPath="")
+        public static List<string> getLinks(string url, string xpath, string toPath="")
         {
 
             List<string> links = new List<string>();
@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
             }
             return links;
         }
-        public HtmlNode[] getNodesByXPath(string url, string xpath)
+        public static HtmlNode[] getNodesByXPath(string url, string xpath)
         {
             HtmlWeb web = new HtmlWeb();
             List<string> links = new List<string>();

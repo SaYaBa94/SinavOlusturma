@@ -15,6 +15,8 @@ namespace EntityLayer
         public string choiceFour { get; set; }
         public string Answer { get; set; }
 
+        public Test test { get; set; }
+
 
     }
 }
