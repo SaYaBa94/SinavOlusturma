@@ -2,7 +2,7 @@
 Konuşarak Oğren - Sınav - Sınav Oluşturma
 
 
-kullanıcı Adı: admin \n
+kullanıcı Adı: admin
 
 şifre : sa123
 
