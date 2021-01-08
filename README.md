@@ -7,3 +7,5 @@ kullanıcı Adı: admin
 şifre : sa123
 
 ile giriş yapabilirsiniz.
+
+Sadri Yasin Balkan
